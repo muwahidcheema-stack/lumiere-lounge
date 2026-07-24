@@ -13,7 +13,7 @@ const fetcher = async (url, params = {}) => {
     return response.data;
 }
 
-export const getTrendyMovies = () => fetcher('/trending/all/day');
+export const getTrendingMovies = () => fetcher('/trending/all/day');
 export const getPopularMovies = () => fetcher('/movie/popular');
 export const getTopratedMovies = () => fetcher('/movie/top_rated');
 export const getUpcomingMovies = () => fetcher('/movie/upcoming');
