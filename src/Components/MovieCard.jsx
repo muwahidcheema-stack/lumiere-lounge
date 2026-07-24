@@ -13,7 +13,7 @@ function MovieCard({movie}) {
                 {!imageLoaded && (
                     <div className="absolute inset-0 bg-gray-800 animate-pulse" />
                 )}
-                <Link to={`/movie/&{movie.id}`}>
+                <Link to={`/movie/${movie.id}`}>
                 <img
                 className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration 150 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 src={posterUrl}
