@@ -12,7 +12,7 @@ function HeroSection({query, setQuery, handleSubmit}) {
       </p>
 
       {/* Large Input Box */}
-      {/* <form onSubmit={handleSubmit} className="w-full max-w-3xl flex shadow-lg">
+      <form onSubmit={handleSubmit} className="w-full max-w-3xl flex shadow-lg">
         <input
           type="text"
           placeholder="Search for a movie, TV show, person..."
@@ -26,7 +26,7 @@ function HeroSection({query, setQuery, handleSubmit}) {
         >
           Search
         </button>
-      </form> */}
+      </form>
     </div>
   )
 }

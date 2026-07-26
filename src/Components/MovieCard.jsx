@@ -6,6 +6,8 @@ function MovieCard({movie}) {
     const posterUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://image.tmdb.org/t/p/w500x750?text=No+Poster+Available';
     const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
     const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'NR';
+
+   
   return (
     <>
         <div className='group relative rounded-xl bg-gray-600 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between'>

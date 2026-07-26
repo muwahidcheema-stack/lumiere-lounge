@@ -17,7 +17,8 @@ function Home() {
     }
   }
 
-
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false)
   const [trendingMovie, setTrendingMovie] = useState([])
   const [UpcomingMovie, setUpcomingMovie] = useState([])
@@ -26,15 +27,15 @@ function Home() {
   useEffect(() => {
     let timer;
     async function fetchAllHomeMovies(){
-      const MIN_LOADING_TIME = 1000; // ⏱️ Minimum time (in ms) to show skeleton loader
+      const MIN_LOADING_TIME = 1000;
       const startTime = Date.now();
       try{
         setLoading(true)
         const [trendingData, popularData, topRatedData, upcomingData] = await Promise.all([
-          getTrendingMovies(),
-          getPopularMovies(),
-          getTopratedMovies(),
-          getUpcomingMovies(),
+          getTrendingMovies(page),
+          getPopularMovies(page),
+          getTopratedMovies(page),
+          getUpcomingMovies(page),
         ]);
 
         const validateMovies = (res) => {
