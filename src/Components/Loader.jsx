@@ -3,15 +3,6 @@ import Skeleton  from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 function SkeletonCard(){
     return(
-        // <div className='bg-gray-800/60 rounded-xl overflow-hidden flex flex-col '>
-        //     <div className='aspect-2/3 w-full bg-gray-700/60'/>
-        //     <div className='flex flex-col grow gap-3 justify-between p-4'>
-        //         <div className='h-4 bg-gray-700/80 rounded-md w-3/4'/>
-        //         <div className='flex items-center justify-between mt-2'>
-        //             <div className='h-3 bg-gray-700/60 rounded-md w-1/4'/>
-        //         </div>
-        //     </div>
-        // </div>
         <div className="bg-gray-900 rounded-xl overflow-hidden shadow-lg flex flex-col justify-between border border-gray-800">
       
             {/* 1. Poster Image Placeholder */}
