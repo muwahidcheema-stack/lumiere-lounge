@@ -13,17 +13,16 @@ function Navbar() {
   return (
     <header className="shadow sticky z-50 top-0 bg-white border-b border-gray-200">
       <nav className="px-4 lg:px-6 py-3">
-        <div className="flex items-center justify-between mx-auto max-w-7xl">
+        <div className="flex items-center justify-between mx-auto max-w-7xl gap-2">
           
           {/* 1. LEFT: Brand Logo */}
-          <Link to="/" className="text-xl font-bold text-gray-900 flex items-center">
-            <span className='text-orange-600 mr-1'>Lumiére </span> 
-            Lounge
+          <Link to="/" className="sm:text-xl text-base font-bold text-gray-900 shrink-0 whitespace-nowrap">
+            <span className='text-orange-600'>Lumiére </span> Lounge
           </Link>
 
           {/* 2. MIDDLE: Nav Links */}
-          <div className="flex items-center justify-center flex-1 mx-4 sm:mx-8">
-            <ul className="flex flex-row space-x-4 text-sm sm:text-base font-medium">
+          <div className="flex items-center justify-center mx-2 sm:mx-6">
+            <ul className="flex flex-row space-x-3 sm:space-x-8 text-sm sm:text-base font-medium">
               <li>
                 <NavLink
                   to="/"
@@ -52,7 +51,7 @@ function Navbar() {
           </div>
 
           {/* 3. RIGHT: Search Button / Icon */}
-          <div className="flex items-center">
+          <div className="flex items-center shrink-0">
             <button
               onClick={() => navigate('/search')}
               className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-orange-700 border border-gray-300 rounded-lg hover:border-orange-700 transition-colors"
@@ -72,7 +71,7 @@ function Navbar() {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
                 />
               </svg>
-              <span>Search</span>
+              <span className='hidden min-[400px]:inline'>Search</span>
             </button>
           </div>
         </div>
