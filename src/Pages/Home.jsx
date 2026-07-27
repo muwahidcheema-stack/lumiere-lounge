@@ -82,7 +82,7 @@ function Home() {
           {loading && <Loader count = {10}/>}
 
           { !loading && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
             {trendingMovie.slice(0,10).map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
@@ -98,7 +98,7 @@ function Home() {
           {loading && <Loader count = {10}/>}
 
           { !loading && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
             {topRatedMovie.slice(0,10).map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
@@ -114,7 +114,7 @@ function Home() {
           {loading && <Loader count = {10}/>}
 
           { !loading && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
             {UpcomingMovie.slice(0,10).map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
@@ -131,7 +131,7 @@ function Home() {
           {loading && <Loader count = {10}/>}
 
           { !loading && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
             {popularMovie.slice(0,10).map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}

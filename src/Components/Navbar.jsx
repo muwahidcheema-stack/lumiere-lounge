@@ -22,8 +22,8 @@ function Navbar() {
           </Link>
 
           {/* 2. MIDDLE: Nav Links */}
-          <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
-            <ul className="flex flex-row space-x-8 font-medium">
+          <div className="flex items-center justify-center flex-1 mx-4 sm:mx-8">
+            <ul className="flex flex-row space-x-4 text-sm sm:text-base font-medium">
               <li>
                 <NavLink
                   to="/"

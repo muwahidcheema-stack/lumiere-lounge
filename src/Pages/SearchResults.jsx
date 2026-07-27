@@ -84,7 +84,7 @@ function SearchResults() {
             <p className='text-sm'> Try searching for something else like "Intersteller" or "Dark Knight".</p>
           </div>
         ) : (
-          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6'>
+          <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6'>
             { result.map((movie) => (
               <MovieCard key={movie.id} movie={movie}/>
             ))}

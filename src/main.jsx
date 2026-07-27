@@ -7,11 +7,13 @@ import Favorites from './Pages/Favorites.jsx'
 import Home from './Pages/Home.jsx'
 import SearchResults from './Pages/SearchResults.jsx'
 import Layout from './Layout.jsx'
+// import FilterBar from './Components/FilterBar.jsx'
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element = {<Layout/>}>
     <Route path='' element={<Home/>}></Route>
     <Route path= '/favorites' element={<Favorites/>}></Route>
     <Route path='/search' element={<SearchResults/>}></Route>
+    {/* <Route path='/filter' element={<FilterBar/>}></Route> */}
     <Route path='movie/:movieId' element={<MovieDetails/>}></Route>
   </Route>
 ))
