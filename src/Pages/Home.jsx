@@ -19,16 +19,22 @@ function Home() {
 
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+
   const [loading, setLoading] = useState(false)
+
   const [trendingMovie, setTrendingMovie] = useState([])
   const [UpcomingMovie, setUpcomingMovie] = useState([])
   const [popularMovie, setPopularMovie] = useState([])
   const [topRatedMovie, setTopRatedMovie] = useState([])
+
+
   useEffect(() => {
     let timer;
+
     async function fetchAllHomeMovies(){
       const MIN_LOADING_TIME = 1000;
       const startTime = Date.now();
+
       try{
         setLoading(true)
         const [trendingData, popularData, topRatedData, upcomingData] = await Promise.all([
@@ -43,13 +49,19 @@ function Home() {
           return list.filter((movie) => movie.title?.trim() && movie.poster_path)
         }
 
+        const validatedTrending = validateMovies(trendingData)
+        const validatedPopular = validateMovies(popularData)
+        const validatedTopRated = validateMovies(topRatedData)
+        const validatedUpcoming = validateMovies(upcomingData)
+
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsedTime);
+
         timer = setTimeout(() => {
-          setTrendingMovie(validateMovies(trendingData));
-          setPopularMovie(validateMovies(popularData))
-          setTopRatedMovie(validateMovies(topRatedData))
-          setUpcomingMovie(validateMovies(upcomingData))
+          setTrendingMovie((prev) => (page === 1 ? validatedTrending : [...prev, ...validatedTrending]));
+          setPopularMovie((prev) => (page === 1 ? validatedPopular : [...prev, ...validatedPopular]))
+          setTopRatedMovie((prev) => (page === 1 ? validatedTopRated : [...prev, ...validatedTopRated]))
+          setUpcomingMovie((prev) => (page === 1 ? validatedUpcoming : [...prev, ...validatedUpcoming]))
           setLoading(false)
         }, remainingTime);
       }
@@ -59,15 +71,19 @@ function Home() {
         setLoading(false)
       }
     }
+
     fetchAllHomeMovies();
+
     return () => clearTimeout(timer);
-  }, [])
+  }, [page])
 
-
+  const handleLoadMore = () => {
+    setPage((prev) => prev + 1)
+  }
 
   return (
     <>
-      <main className='min-h-screen bg-gray-500 text-white'>
+      <main className='min-h-screen bg-gray-950 text-white'>
         <HeroSection
         query={query}
         setQuery={setQuery}
@@ -82,11 +98,25 @@ function Home() {
           {loading && <Loader count = {10}/>}
 
           { !loading && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
-            {trendingMovie.slice(0,10).map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
-          </div>
+            <>   
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-6 px-2 sm:px-6">
+                {trendingMovie.slice(0,10).map((movie) => (
+                  <MovieCard key={movie.id} movie={movie} />
+                ))}
+              </div>
+
+              {/* <div className="flex justify-center mt-8">
+                <button
+                  onClick={handleLoadMore}
+                  disabled={loading}
+                  className="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 disabled:bg-gray-700 text-white font-medium rounded-xl transition shadow-md active:scale-95"
+                >
+                  {loading ? 'Loading...' : 'Load More Movies'}
+                </button>
+              </div> */}
+            </>
+            
+
           )}
         </section>
 
@@ -138,9 +168,6 @@ function Home() {
           </div>
           )}
         </section>
-
-        
-
       </main>
     </>
   )
