@@ -5,7 +5,7 @@
 
 Powered by TMDB (The Movie Database) API and styled with Tailwind CSS.
 
-##✨ Features
+# ✨ Features
 
 *  **🔥 Home Dashboard:** Sections featuring Trending, Top-Rated, Upcoming, and Popular movies.
 
@@ -56,34 +56,35 @@ src/
 ├── App.jsx                # Application routes layout
 └── main.jsx               # Entry point
 ```
+---
 
 ## 🚀 Getting Started
 Follow these steps to set up and run the project locally on your machine.
 
 * 1. Clone the Repository
-    ```text
-    git clone https://github.com/your-username/lumiere-lounge.git
-    cd lumiere-lounge
-    ```
-  * 2. Install Dependencies
-    ```text
-    npm install
-    ```
-  * 3. Set Up Environment Variables
-    ```text
-    Create a .env file in the root directory and add your TMDB API Key:
+  ```text
+  git clone https://github.com/your-username/lumiere-lounge.git
+  cd lumiere-lounge
+  ```
+* 2. Install Dependencies
+  ```text
+  npm install
+  ```
+* 3. Set Up Environment Variables
+  ```text
+  Create a .env file in the root directory and add your TMDB API Key:
+  ```
+* 4.Code snippet
+  ```text
+  VITE_TMDB_API_KEY=your_tmdb_api_key_here
+  VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+  ```
 
-    Code snippet
-    VITE_TMDB_API_KEY=your_tmdb_api_key_here
-    VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
-    ```
-
-  * 3. Run Development Server
-    ```text
-    npm run dev
-    ```
-Once started, open your browser and navigate to the address shown in your terminal (usually http://localhost:5173/)
+* 3. Run Development Server
+  ```text
+  npm run dev
+  ```
 ---
 
 ## 👨‍💻 Developer
-Developed with ❤️ by Muhammad Muwahid Cheema.
+Developed with ❤️ by Muwahid Cheema.
