@@ -1,16 +1,91 @@
-# React + Vite
+🎬 Lumiére Lounge
+Lumiére Lounge is a modern, responsive React web application that allows movie enthusiasts to explore trending titles, search through vast catalogs, filter movies by genre or release year, view detailed movie information, and bookmark their personal favorite movies.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Powered by TMDB (The Movie Database) API and styled with Tailwind CSS.
 
-Currently, two official plugins are available:
+✨ Features
+🔥 Home Dashboard: Sections featuring Trending, Top-Rated, Upcoming, and Popular movies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔍 Search Capabilities: Real-time search functionality allowing users to instantly look up movies.
 
-## React Compiler
+🎛️ Advanced Filtering & Sorting: Filter movies dynamically by genre, release year, language, or sort by popularity and rating using TMDB's /discover endpoint.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+❤️ Favorite Movies: Save favorite movies using React Context and local state to build a personal watchlist.
 
-## Expanding the ESLint configuration
+📱 Fully Responsive Design: Clean, mobile-first design with smooth layouts across devices—from smartphones to ultra-wide displays.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+🛠️ Tech Stack
+Frontend: React.js (Vite)
+
+Styling: Tailwind CSS
+
+Routing: React Router DOM (react-router-dom)
+
+API: TMDB API (The Movie Database)
+
+HTTP Client: Axios / Fetch API
+
+Icons: Heroicons / Inline SVGs
+
+📁 Project Structure
+Plaintext
+src/
+├── components/
+│   ├── FilterBar.jsx      # Dynamic filter controls (Genre, Year, Sort)
+│   ├── MovieCard.jsx      # Reusable movie item component
+│   ├── Navbar.jsx         # Sticky header navigation bar
+│   ├── Footer.jsx         # Application footer
+│   └── Loader.jsx         # Skeleton loading screen
+├── context/
+│   └── FavoriteContext.jsx # Global context state for saved favorites
+├── pages/
+│   ├── Home.jsx           # Main landing page
+│   ├── Favorites.jsx      # Bookmarked movies page
+│   ├── MovieDetails.jsx   # Detailed view of a single title
+│   └── NotFound.jsx       # Custom 404 error screen
+├── services/
+│   └── tmdbApi.js         # API integration & endpoints logic
+├── App.jsx                # Application routes layout
+└── main.jsx               # Entry point
+🚀 Getting Started
+Follow these steps to set up and run the project locally on your machine.
+
+Prerequisites
+Make sure you have the following installed:
+
+Node.js (v16.x or higher)
+
+npm or yarn
+
+Installation
+Clone the Repository
+
+Bash
+git clone https://github.com/your-username/lumiere-lounge.git
+cd lumiere-lounge
+Install Dependencies
+
+Bash
+npm install
+Set Up Environment Variables
+Create a .env file in the root directory and add your TMDB API Key:
+
+Code snippet
+VITE_TMDB_API_KEY=your_tmdb_api_key_here
+VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+Run the Development Server
+
+Bash
+npm run dev
+Open your browser and navigate to http://localhost:5173.
+
+🛠️ Scripts Overview
+npm run dev - Starts the development server.
+
+npm run build - Builds the production-ready application.
+
+npm run preview - Previews the production build locally.
+
+👨‍💻 Developer
+Developed with ❤️ by Muhammad Muwahid Cheema.
