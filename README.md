@@ -74,13 +74,13 @@ Follow these steps to set up and run the project locally on your machine.
   ```text
   Create a .env file in the root directory and add your TMDB API Key:
   ```
-* 4.Code snippet
+* 4. Code snippet
   ```text
   VITE_TMDB_API_KEY=your_tmdb_api_key_here
   VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
   ```
 
-* 3. Run Development Server
+* 5. Run Development Server
   ```text
   npm run dev
   ```
